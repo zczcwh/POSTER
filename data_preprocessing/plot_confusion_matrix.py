@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import os
 
-def plot_confusion_matrix(cm, labels_name, title, acc):
+def plot_confusion_matrix(cm, labels_name, title, acc, output_path=None):
     cm = cm / cm.sum(axis=1)[:, np.newaxis]
     thresh = cm.max() / 2
     for i, j in itertools.product(range(cm.shape[0]), range(cm.shape[1])):
@@ -20,6 +20,11 @@ def plot_confusion_matrix(cm, labels_name, title, acc):
     plt.xlabel('Prediction')
     plt.imshow(cm, interpolation='nearest', cmap=plt.get_cmap('Blues'))
     plt.tight_layout()
-    plt.savefig(os.path.join('./Confusion_matrix', title, "acc" + str(acc) + ".png"), format='png')
+    if output_path is None:
+        output_path = os.path.join('./Confusion_matrix', title)
+    if not os.path.exists(output_path):
+        os.makedirs(output_path)
+
+    plt.savefig(os.path.join(output_path, "acc" + str(acc) + ".png"), format='png')
     plt.show()
 
