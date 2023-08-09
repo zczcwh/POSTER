@@ -51,6 +51,19 @@ Our research code is released under the MIT license. See [LICENSE](LICENSE) for 
 
 
 
+## Citations
+If you find our work useful in your research, please consider citing:
+
+```bibtex
+@article{zheng2022poster,
+  title={Poster: A pyramid cross-fusion transformer network for facial expression recognition},
+  author={Zheng, Ce and Mendieta, Matias and Chen, Chen},
+  journal={arXiv preprint arXiv:2204.04083},
+  year={2022}
+}
+```
+
+
 ## Acknowledgments
 
 Our implementation and experiments are built on top of open-source GitHub repositories. We thank all the authors who made their code public, which tremendously accelerates our project progress. If you find these works helpful, please consider citing them as well.
